@@ -347,7 +347,10 @@ export default function Dashboard() {
               <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
                 <div className="px-6 py-4 border-b border-slate-100 flex justify-between items-center">
                   <h4 className="font-bold text-slate-800">Inventario Activo</h4>
-                  <span className="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">{properties.length} TOTAL</span>
+                  <div className="flex gap-4 items-center">
+                    <span className="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">{properties.length} TOTAL</span>
+                    <button onClick={() => { if(confirm('¿Resetear a valores por defecto?')) setProperties(defaultProperties); }} className="text-[10px] font-bold tracking-wider text-slate-400 hover:text-red-500 transition uppercase">Resetear</button>
+                  </div>
                 </div>
                 <div className="grid grid-cols-6 px-6 py-3 border-b border-slate-50 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
                   <div className="col-span-2">Propiedad</div>
@@ -432,7 +435,10 @@ export default function Dashboard() {
               <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
                 <div className="px-6 py-4 border-b border-slate-100 flex justify-between items-center">
                   <h4 className="font-bold text-slate-800">Pipeline de Leads</h4>
-                  <span className="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">{leads.length} ACTIVOS</span>
+                  <div className="flex gap-4 items-center">
+                    <span className="text-[10px] font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">{leads.length} ACTIVOS</span>
+                    <button onClick={() => { if(confirm('¿Resetear a valores por defecto?')) setLeads(defaultLeads); }} className="text-[10px] font-bold tracking-wider text-slate-400 hover:text-red-500 transition uppercase">Resetear</button>
+                  </div>
                 </div>
                 <div className="grid grid-cols-6 px-6 py-3 border-b border-slate-50 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
                   <div className="col-span-2">Prospecto</div>
